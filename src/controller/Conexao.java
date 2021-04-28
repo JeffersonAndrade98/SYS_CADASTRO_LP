@@ -39,7 +39,7 @@ public class Conexao {
             
             //JOptionPane.showMessageDialog(null, "Conexão realizada com sucesso : )");
         }catch (SQLException ex){
-            JOptionPane.showMessageDialog(null, "ERRO DE CONEXÃO!!!\n"+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "ERRO! SISTEMA OFFLINE\n"+ex.getMessage());
         }
     }
     public static void main(String[] args) {
@@ -52,7 +52,7 @@ public class Conexao {
             stm=con.createStatement(rs.TYPE_SCROLL_INSENSITIVE,rs.CONCUR_READ_ONLY);
             rs=stm.executeQuery(sql);
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "ERRO NO SQL DO BANCO");
+            JOptionPane.showMessageDialog(null, "ERRO! NÃO FOI POSSÍVEL ACESSAR O BANCO DE DADOS");
         }
     }
          public void desconectarBanco(){

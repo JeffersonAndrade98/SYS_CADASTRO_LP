@@ -5,10 +5,8 @@
  */
 package view;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import controller.CadastroController;
 import controller.Conexao;
-import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -66,21 +64,26 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tableCadastro = new javax.swing.JTable();
         jLabel14 = new javax.swing.JLabel();
-        txtPesquisa = new javax.swing.JTextField();
-        btPesquisar = new javax.swing.JButton();
-        btExcluir = new javax.swing.JButton();
-        lbContador = new javax.swing.JLabel();
-        txtContador = new javax.swing.JLabel();
-        bt_limpar_tabela = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        btImprimir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         btFiltrar = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jLabel3 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        txtPesquisa = new javax.swing.JTextField();
+        btPesquisar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        btExcluir1 = new javax.swing.JButton();
+        btExcluir = new javax.swing.JButton();
+        btImprimir = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        lbContador = new javax.swing.JLabel();
+        txtContador = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItemNovo = new javax.swing.JMenuItem();
@@ -89,6 +92,8 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         jMenuItemSair = new javax.swing.JMenuItem();
         MenuNovo = new javax.swing.JMenu();
         MenuContatos = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SysCadastro - Leticia Turismo");
@@ -100,6 +105,7 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        tableCadastro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tableCadastro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null}
@@ -108,6 +114,8 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Título 5", "Título 6", "Título 7", "Título 8", "Título 9"
             }
         ));
+        tableCadastro.setRowHeight(30);
+        tableCadastro.setRowMargin(5);
         tableCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableCadastroMouseClicked(evt);
@@ -121,7 +129,82 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tableCadastro);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel14.setText("Reservas cadastradas");
+        jLabel14.setText("Todas as reservas");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("PLATAFORMA DE GERENCIAMENTO DE RESERVAS | ONLINE");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("SysCadastro © - Leticia Turismo - (v.4.0 | 2021) 04/2019 por Jefferson Andrade");
+        jLabel16.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel16.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabel16MouseMoved(evt);
+            }
+        });
+
+        jLabel1.setBackground(new java.awt.Color(255, 51, 51));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo LP (1).png"))); // NOI18N
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btFiltrar.setBackground(new java.awt.Color(0, 0, 255));
+        btFiltrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btFiltrar.setForeground(new java.awt.Color(255, 255, 255));
+        btFiltrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/filtro.png"))); // NOI18N
+        btFiltrar.setText("Filtrar");
+        btFiltrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFiltrarActionPerformed(evt);
+            }
+        });
+
+        jDateChooser2.setDateFormatString("dd-MM-yyyy");
+
+        jLabel3.setText("Até");
+
+        jDateChooser1.setDateFormatString("dd-MM-yyyy");
+
+        jLabel4.setText("FiILTRAR POR DATA:");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btFiltrar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btFiltrar)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel3)
+                        .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btPesquisar.setBackground(new java.awt.Color(0, 0, 255));
         btPesquisar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -144,6 +227,55 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Pesquisar por nome");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addComponent(btPesquisar))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btPesquisar)
+                    .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btExcluir1.setBackground(new java.awt.Color(0, 0, 255));
+        btExcluir1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btExcluir1.setForeground(new java.awt.Color(255, 255, 255));
+        btExcluir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/novo.png"))); // NOI18N
+        btExcluir1.setText("NOVO");
+        btExcluir1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btExcluir1MouseMoved(evt);
+            }
+        });
+        btExcluir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluir1ActionPerformed(evt);
+            }
+        });
+
         btExcluir.setBackground(new java.awt.Color(0, 0, 255));
         btExcluir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btExcluir.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,36 +289,6 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         btExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btExcluirActionPerformed(evt);
-            }
-        });
-
-        lbContador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbContador.setText("Qt. registros");
-
-        txtContador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        bt_limpar_tabela.setBackground(new java.awt.Color(255, 51, 51));
-        bt_limpar_tabela.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        bt_limpar_tabela.setForeground(new java.awt.Color(255, 255, 255));
-        bt_limpar_tabela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/excluir.png"))); // NOI18N
-        bt_limpar_tabela.setText("Apagar tudo");
-        bt_limpar_tabela.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_limpar_tabelaActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Todas as reservas");
-        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("SysCadastro © - Leticia Turismo - (v.3.0) 04/2019 por Jefferson Andrade");
-        jLabel16.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel16.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel16MouseMoved(evt);
             }
         });
 
@@ -206,27 +308,61 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(255, 51, 51));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo LP (1).png"))); // NOI18N
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btImprimir)
+                .addGap(18, 18, 18)
+                .addComponent(btExcluir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btExcluir1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btImprimir)
+                    .addComponent(btExcluir)
+                    .addComponent(btExcluir1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        jLabel3.setText("Até");
+        jPanel6.setBackground(new java.awt.Color(0, 0, 255));
+        jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btFiltrar.setBackground(new java.awt.Color(0, 0, 255));
-        btFiltrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btFiltrar.setForeground(new java.awt.Color(255, 255, 255));
-        btFiltrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/filtro.png"))); // NOI18N
-        btFiltrar.setText("Filtrar");
-        btFiltrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btFiltrarActionPerformed(evt);
-            }
-        });
+        lbContador.setBackground(new java.awt.Color(255, 255, 255));
+        lbContador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbContador.setForeground(new java.awt.Color(255, 255, 255));
+        lbContador.setText("Qt. registros");
 
-        jLabel4.setText("FiILTRAR POR DATA:");
+        txtContador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtContador.setForeground(new java.awt.Color(255, 255, 255));
 
-        jDateChooser1.setDateFormatString("dd-MM-yyyy");
-
-        jDateChooser2.setDateFormatString("dd-MM-yyyy");
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbContador)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtContador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lbContador)
+                    .addComponent(txtContador, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -237,84 +373,65 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btImprimir)
-                            .addComponent(jLabel14))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48)
-                                .addComponent(jLabel3)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(56, 56, 56)
-                                .addComponent(btFiltrar))
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(36, 36, 36))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane2)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btPesquisar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 465, Short.MAX_VALUE)
-                        .addComponent(btExcluir)
-                        .addGap(18, 18, 18)
-                        .addComponent(bt_limpar_tabela)
-                        .addGap(26, 26, 26)
-                        .addComponent(lbContador)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtContador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(155, 155, 155))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(18, 50, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel3)
-                            .addComponent(btFiltrar)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)))
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(lbContador)
-                    .addComponent(txtContador, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt_limpar_tabela)
-                    .addComponent(btExcluir)
-                    .addComponent(btPesquisar)
-                    .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addComponent(btImprimir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 0, 255));
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jMenu1.setText("Arquivo");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jMenuItemNovo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemNovo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jMenuItemNovo.setText("Novo");
         jMenuItemNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -324,6 +441,7 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         jMenu1.add(jMenuItemNovo);
 
         jMenuItemImprimir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemImprimir.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jMenuItemImprimir.setText("Imprimir");
         jMenuItemImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -333,6 +451,7 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         jMenu1.add(jMenuItemImprimir);
 
         MenuPesquisar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        MenuPesquisar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         MenuPesquisar.setText("Pesquisar");
         MenuPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,6 +460,7 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         });
         jMenu1.add(MenuPesquisar);
 
+        jMenuItemSair.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jMenuItemSair.setText("Sair");
         jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -352,6 +472,7 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         MenuNovo.setText("Novo");
+        MenuNovo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MenuNovo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MenuNovoMouseClicked(evt);
@@ -360,12 +481,27 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         jMenuBar1.add(MenuNovo);
 
         MenuContatos.setText("Contatos");
+        MenuContatos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MenuContatos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MenuContatosMouseClicked(evt);
             }
         });
         jMenuBar1.add(MenuContatos);
+
+        jMenu2.setText("Ferramentas");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jMenuItem1.setText("Apagar tudo");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -378,8 +514,8 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(1, 1, 1))
         );
 
         pack();
@@ -403,12 +539,6 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
         Contador();
         
     }//GEN-LAST:event_btExcluirActionPerformed
-
-    private void bt_limpar_tabelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_limpar_tabelaActionPerformed
-    
-        control.delete_all(mod);
-        
-    }//GEN-LAST:event_bt_limpar_tabelaActionPerformed
 
     private void btImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btImprimirActionPerformed
         try{
@@ -609,6 +739,20 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
             }
         }); 
     }//GEN-LAST:event_formKeyPressed
+
+    private void btExcluir1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btExcluir1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btExcluir1MouseMoved
+
+    private void btExcluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluir1ActionPerformed
+        TelaNovoCadastroView tela = new TelaNovoCadastroView();
+        tela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btExcluir1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        control.delete_all(mod);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
     public void preencherTabela(String Sql){
         
         ArrayList dados = new ArrayList();
@@ -634,16 +778,16 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
     DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
     
     tableCadastro.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-    tableCadastro.getColumnModel().getColumn(0).setMaxWidth(44);
-    tableCadastro.getColumnModel().getColumn(1).setMaxWidth(44);
+    tableCadastro.getColumnModel().getColumn(0).setMaxWidth(50);
+    tableCadastro.getColumnModel().getColumn(1).setMaxWidth(50);
     tableCadastro.getColumnModel().getColumn(2).setMaxWidth(550);
-    tableCadastro.getColumnModel().getColumn(3).setMaxWidth(150);
+    tableCadastro.getColumnModel().getColumn(3).setMaxWidth(200);
     tableCadastro.getColumnModel().getColumn(4).setMaxWidth(240);
-    tableCadastro.getColumnModel().getColumn(5).setMaxWidth(240);
-    tableCadastro.getColumnModel().getColumn(6).setMaxWidth(120);
-    tableCadastro.getColumnModel().getColumn(7).setMaxWidth(100);
-    tableCadastro.getColumnModel().getColumn(8).setMaxWidth(100);
-    tableCadastro.getColumnModel().getColumn(9).setMaxWidth(120);
+    tableCadastro.getColumnModel().getColumn(5).setMaxWidth(250);
+    tableCadastro.getColumnModel().getColumn(6).setMaxWidth(140);
+    tableCadastro.getColumnModel().getColumn(7).setMaxWidth(130);
+    tableCadastro.getColumnModel().getColumn(8).setMaxWidth(130);
+    tableCadastro.getColumnModel().getColumn(9).setMaxWidth(150);
     
     
     //tableCadastro.setFont(new Font("Default",Font.PLAIN, 14));
@@ -664,7 +808,7 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
 }
     
     private void setIcon() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("LP.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("LP_icon.png")));
     }
     
     /**
@@ -705,10 +849,13 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
     private javax.swing.JMenu MenuNovo;
     private javax.swing.JMenuItem MenuPesquisar;
     private javax.swing.JButton btExcluir;
+    private javax.swing.JButton btExcluir1;
+    private javax.swing.JButton btExcluir2;
+    private javax.swing.JButton btExcluir3;
     private javax.swing.JButton btFiltrar;
     private javax.swing.JButton btImprimir;
+    private javax.swing.JButton btImprimir1;
     private javax.swing.JButton btPesquisar;
-    private javax.swing.JButton bt_limpar_tabela;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
@@ -717,12 +864,20 @@ public class TelaInicioCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemImprimir;
     private javax.swing.JMenuItem jMenuItemNovo;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbContador;
     private javax.swing.JTable tableCadastro;
